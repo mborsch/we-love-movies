@@ -28,15 +28,6 @@ function list(is_showing) {
     });
 }
 
-/*
-function listInTheaters() {
-  return knex("movies as m")
-    .join("movies_theaters as mt", "m.movie_id", "mt.movie_id")
-    .select("m.*", "mt.is_showing")
-    .where({ "mt.is_showing": true });
-}
-*/
-
 function read(movie_id) {
   return knex("movies").select("*").where({ movie_id }).first();
 }

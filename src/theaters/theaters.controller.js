@@ -9,9 +9,8 @@ async function list(req, res) {
     const dataArray = theaters.map(async (theater) => {
       return { ...theater, movies: await service.getMovies(theater) };
     });
-    //   const theater = { theater_id: 1 };
+
     const data = await Promise.all(dataArray);
-    //   const movies = await service.getMovies(theater);
 
     res.json({ data });
   } else {
